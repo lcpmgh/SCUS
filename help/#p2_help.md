@@ -1,4 +1,4 @@
-Page 2: view (to view the inner relationship of data)
+#### Page 2: view (explore the inner relationship of data)
 
 On this page, you can use different methods to explore the internal relationship of data, to help you better understand the data and build a more reliable mixing model. 
 
