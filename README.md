@@ -1,2 +1,3 @@
 # SCUS
-**SCUS**(Sediment Contribution Unmixing Software) is an auxiliary tool for the analysis work of the sediment source fingerprinting approach.  You can use this application on-line at this link: [SCUS](http://lcpmgh.com/scus/).
+The Sediment Contribution Unmixing Software (**SCUS**) is a supplementary tool that can be used to aid in the analysis of sediment source fingerprinting. This application is available on-line and can be accessed via the following link: [SCUS](http://lcpmgh.com/scus/).
+
