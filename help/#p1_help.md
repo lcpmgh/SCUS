@@ -1,19 +1,18 @@
-**SCUS**(Sediment Contribution Unmixing Software) is an auxiliary tool for the analysis work of the sediment source fingerprinting approach. There is a brief description of how to get started. 
+**SCUS**, which stands for **Sediment Contribution Unmixing Software**, is an additional tool used in the analysis of sediment source fingerprinting. There is a brief guide available on how to get started with the software. 
 
-The most important thing is to store your data in a comma-separated file correctly. You can store the source and target data in a single file (Integrated data) for input or input them separately (Source data and Target data).  Or you can use the example data to learn more about how the software works.
+The most crucial step is to correctly save your data in a comma-separated file. You can upload the source and target data together as a single file, or separately as source data and target data. Alternatively, you can utilize example data to familiarize yourself with the software's functionality.
 
-Please note that after successfully inputting the data, you need to restart the software if you want to replace another set of data.  
+It's important to note that you have to reset the software after successfully inputting data if you want to replace it with a different set of data. Additionally, the input data must meet specific requirements:
 
-The input files should meet the following requirements:
++ **source&target** (<a href="https://github.com/lcpmgh/SCUS/blob/main/casedata/casedata_source&target.csv" target="_blank">raw data</a>):
 
-+ **Integrated data** (<a href="https://github.com/lcpmgh/SCUS/blob/main/exampleData/data1_integratedData.csv" target="_blank">raw data</a>):
+<img src="/srv/shiny-server/scus/help/pic_p1_1source&target.png" width = 100% alt="source&target" align=center />
 
-<img src="/srv/shiny-server/SCUS/help/1-integratedData.PNG" width = 100% alt="integratedData" align=center />
++ **source** (<a href="https://github.com/lcpmgh/SCUS/blob/main/casedata/casedata_source.csv" target="_blank">raw data</a>):
 
-+ **Source data** (<a href="https://github.com/lcpmgh/SCUS/blob/main/exampleData/data1_sourceData.csv" target="_blank">raw data</a>):
+<img src="/srv/shiny-server/scus/help/pic_p1_2source.png" width = 100% alt="source" align=center />
 
-<img src="/srv/shiny-server/SCUS/help/2-sourceData.PNG" width = 100% alt="sourceData" align=center />
++ **target** (<a href="https://github.com/lcpmgh/SCUS/blob/main/casedata/casedata_target.csv" target="_blank">raw data</a>):
 
-+ **Target data** (<a href="https://github.com/lcpmgh/SCUS/blob/main/exampleData/data1_targetData.csv" target="_blank">raw data</a>):
+<img src="/srv/shiny-server/scus/help/pic_p1_3target.png" width = 100% alt="target" align=center />
 
-<img src="/srv/shiny-server/SCUS/help/3-targetData.PNG" width = 100% alt="itargetData" align=center />

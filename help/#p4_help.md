@@ -1,30 +1,30 @@
-#### Page 4: solve (solution of the question)
+#### Part 4: Solve
 
-In this section, the classical frequency model is established and expressed as the following optimization problem:
+This section presents the classical frequency model, which can be formulated as an optimization problem as follows:
 
 $$
 min\:f(P_s)\\
-s.t.\quad \left\{\begin{matrix}0\leq P_s \leq 1, s=1,2,3,...,m\\\sum_{s=1}^{m}{P_s}=1\end{matrix}\right.\\\tag{1}
+s.t.\quad \left\{\begin{matrix}0\leq P_s \leq 1, s=1,2,3,...,m\\\sum_{s=1}^{m}{P_s}=1\end{matrix}\right.
 $$
 
-and there are some optional forms of $f(P_s)$:
+Some optional forms of $f(P_s)$:
 
-1. The sum of squares of the relative errors: $f(P_s)=\sum_{i=1}^{n}(\frac{C_i-\sum_{s=1}^{m}P_sS_{si}}{C_i})^2$ (Walling et al., 1999);
+1. The sum of squared relative errors: $f(P_s)=\sum_{i=1}^{n}(\frac{C_i-\sum_{s=1}^{m}P_sS_{si}}{C_i})^2$ (Walling et al., 1999);
 2. The residual sum of squares (RSS): $f(P_s)=\sum_{i=1}^{n}\{C_i-\sum_{s=1}^{m}P_sS_{si}\}^2$ (Gruszowski et al., 2003);
-3. The sum of absolute of the relative errors: $f(P_s)=\sum_{i=1}^{n}|\frac{C_i-\sum_{s=1}^{m}P_sS_{si}}{C_i}|$ (Walling et al., 1993);
+3. The absolute sum of the relative errors: $f(P_s)=\sum_{i=1}^{n}|\frac{C_i-\sum_{s=1}^{m}P_sS_{si}}{C_i}|$ (Walling et al., 1993);
 4. The root mean square error (RMSE): $f(P_s)=\sqrt{\frac{\sum_{i=1}^{n}\{C_i-\sum_{s=1}^{m}P_sS_{si}\}^2}{n}}$ (Motha et al., 2004);
 5. The Landwehr model: $f(P_s)=\frac{1}{n}\sum_{i=1}^{n}\frac{|C_i-\sum_{s=1}^{m}P_sS_{si}|}{\sqrt{\sum_{s=1}^{m}P_s^2VAR_{si}}}$ (Devereux et al., 2010);
 6. The modified Landwehr model: $f(P_s)=\frac{1}{n}\sum_{i=1}^{n}\frac{|C_i-\sum_{s=1}^{m}P_sS_{si}|}{\sqrt{\sum_{s=1}^{m}P_s^2\frac{VAR_{si}}{N_s}}}$  (Gellis et al., 2009);
 7. The Collins model: $f(P_s)=\sum_{i=1}^{n}(\frac{C_i-\sum_{s=1}^{m}P_sS_{si}Z_sO_s}{C_i})^2W_i$ (Collins et al., 1997);
 8. The modified Collins model: $f(P_s)=\sum_{i=1}^{n}(\frac{C_i-\sum_{s=1}^{m}P_sS_{si}Z_sO_sSV_{si}}{C_i})^2W_i$ (Collins et al., 2010).
 
-where, 
+Their parameters mean: 
 
 + $P_s$: the percentage contribution from source group $s$;
-+ $C_i$: the mean concentration of fingerprint property $i$ in sediment sample;
-+ $S_{si}$: the mean concentration of tracer property $i$ in source group $s$;
++ $C_i$: the merged concentration of fingerprint property $i$ in sediment sample;
++ $S_{si}$: the merged concentration of tracer property $i$ in source group $s$;
 + $m$: the number of sediment sources;
-+ $n$: the number of fingerprints
++ $n$: the number of fingerprints;
 + $VAR_{si}$: the variance of a specific tracer concentration $i$ in the source group $s$;
 + $N_s$: the total number of samples in the source group $s$;
 + $Z_s$: the particle size correction factor for source group $s$; 
@@ -32,28 +32,30 @@ where,
 + $W_i$: the discriminatory weight of tracer $i$;
 + $SV_{si}$: weighting representing the within-source variability of tracer property $i$ in source group $s$.  
 
-For the optimization problem (1), this software provides two algorithms (Genetic Algorithms and Simulated Annealing). You can use the results of the previous statistical tests, or you can choose sources, targets, and tracers by yourself. Experiments show that standardizing data will change the distribution of optimal solutions in the feasible region, so it is not recommended to check the checkbox for data standardization (z-transformation).  Especially for models 1, 3, 7, or 8, for some synthetic data sets, due to the relative error calculation method adopted by these models, the error calculated with standardized data is likely to be infinite. 
+SCUS offers two algorithms, **Genetic Algorithms** and **Simulated Annealing**, to solve this optimization problem. You can either utilize the findings of past statistical tests or select your own sources, targets, and tracers. However, experiments have revealed that standardizing data using z-transformation can alter the distribution of optimal solutions in the feasible region. Therefore, it is not advisable to use data standardization, particularly for models 1, 3, 7, or 8. In certain synthetic data sets, the relative error calculation method used by these models may lead to infinite errors when standardized data is applied.
 
-##### Brief description of algorithm parameters:
+##### Brief description of parameters:
 
-+ Accuracy: the computational accuracy when finding the optimal solution (i.e. the number of decimal places);
-+ Population size:  individual number of population, the larger the population, the easier it is to find the global optimal solution;
-+ Maximum generation: maximum iterations;
-+ Generation gap: the difference between the new generation and the previous generation. The smaller the difference, the more excellent individuals will be retained, and the larger the difference, the more new individuals will appear;
-+ Crossover probability and Mutation probability: The greater the probability of crossover and mutation, the faster the search speed of the optimal solution, but the instability will also increase;
-+ Temperature attenuation coefficient: Multiplier of temperature after each external iteration;
-+ Initial temperature: The temperature at the beginning of the algorithm;
-+ Maximum external iterations: External iteration means the decrease of temperature. When the temperature drops below the accuracy or reaches the maximum value, the iteration stops;
-+ Maximum internal iterations: Internal iteration refers to the number of iterations at a certain temperature and stops when the limit is reached. The total number of iterations of the algorithm is equal to the number of external iterations multiplied by the number of internal iterations.
++ Precision: refers to the level of computational accuracy achieved when finding the optimal solution, which is measured by the number of digits after the decimal point in the calculated function value;
++ Population size: how many individuals are in the population. A larger population can help find the best solution more easily;
++ Maximum generation: how many times the population can evolve;
++ Generation gap: how different the new population is from the old one. A smaller gap keeps more good individuals, while a larger gap creates more new individuals;
++  Crossover probability and Mutation probability: how likely it is that two individuals will combine or change their traits. A higher probability can speed up the search for the best solution, but also make it less stable;
++ Temperature attenuation coefficient: how much the temperature decreases after each cycle;
++ Initial temperature: the starting temperature of the algorithm;
++ Maximum external iterations: how many cycles of temperature decrease are allowed. The algorithm stops when the temperature is too low or the limit is reached;
++ Maximum internal iterations: how many times the algorithm can run at a fixed temperature. The algorithm stops when the limit is reached. The total number of times the algorithm runs is equal to the number of external iterations times the number of internal iterations.
 
 ##### Brief description of results:
 
-+ Algorithm performance 1: record the values of the optimal solution of each iteration. When the optimal solution is stable at the end of the iteration, it can be considered that the result is reliable;
-+ Algorithm performance 2: when the model contains two or three sources, the line or raster of errors in the feasible region will be displayed, and the location of solutions will be marked to check whether the results are credible. In particular, it should be noted that for model 4 and model 5, since the contributions and variance are in the denominator, it means that the error result is easy to be infinite, especially when the variance of data is generally small. At this time,  performance 2 will become unrecognizable.
-+ GOF: goodness of fit, $GOF=1-\frac{1}{n}\sum_{i=1}^{n}|\frac{C_i-\sum_{s=1}^{m}P_sS_{si}}{C_i}|$;
++ Algorithm performance of plot 1:  keep track of the best solutions in each iteration. If the best solution does not change after many iterations, you can trust the result;
++ Algorithm performance of plot 2: show the error lines or grids in the feasible region when the model has two or three sources. Mark where the solutions are and see if they make sense. Be careful with model 4 and model 5, because the errors can become infinite when the contributions and variance are very small in the denominator. This can happen when the data has low variance. In this case, plot 2 is not useful.
++ GOF: goodness of fit (for the first one, also know as the mean absolute fit, MAF)
+  + absolute: $GOFa=1-\frac{1}{n}\sum_{i=1}^{n}|\frac{C_i-\sum_{s=1}^{m}P_sS_{si}}{C_i}|$ (Laceby and Olley, 2015),
+  + squared: $GOFs=1-\frac{1}{n}\sum_{i=1}^{n}(\frac{C_i-\sum_{s=1}^{m}P_sS_{si}}{C_i})^2$ (Collins et al., 2012);
 + AIC: Akaike information criterion, $AIC=ln(\frac{RSS}{n})+\frac{2(m+1)}{n}$, where RSS is the sum of squared of residuals (i.e. the second type of $f(P_s)$);
 + SC: Schwarz criterion, $SC=ln(\frac{RSS}{n})+\frac{m}{n}ln(n)$;
-+ Proportion: the contribution ratio of each source is shown in decimal form, i.e. the final solution of problem (1).
++ Proportion: shows how much each source contributes to the total in decimals and pie charts.
 
 ##### Reference
 
@@ -67,3 +69,5 @@ For the optimization problem (1), this software provides two algorithms (Genetic
 + Gellis, A. C., Hupp, C. R., Pavich, M. J., Landwehr, J. M., Banks, W. S., Hubbard, B. E., ... & Reuter, J. M. (2009). Sources, Transport, and Storage of Sediment in the Chesapeake Bay Watershed: US Geological Survey Scientific Investigations Report 2008–5186. 2009. 95p.
 + Collins, A. L., Walling, D. E., & Leeks, G. J. (1997). Fingerprinting the origin of fluvial suspended sediment in larger river basins: combining assessment of spatial provenance and source type. *Geografiska Annaler: Series A, Physical Geography*, *79*(4), 239-254.
 + Collins, A. L., Walling, D. E., Webb, L., & King, P. (2010). Apportioning catchment scale sediment sources using a modified composite fingerprinting technique incorporating property weightings and prior information. *Geoderma*, *155*(3-4), 249-261.
++ Laceby, J. Patrick, and Jon Olley (2015). An examination of geochemical modelling approaches to tracing sediment sources incorporating distribution mixing and elemental correlations. *Hydrological processes,* 29.6 (2015): 1669-1685.
++ Collins, A. L., Zhang, Y., Walling, D. E., Grenfell, S. E., Smith, P., Grischeff, J., ... & Brogden, D. (2012). Quantifying fine‐grained sediment sources in the River Axe catchment, southwest England: application of a Monte Carlo numerical modelling framework incorporating local and genetic algorithm optimisation. Hydrological Processes, 26(13), 1962-1983.
