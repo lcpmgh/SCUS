@@ -4,15 +4,15 @@ The most crucial step is to correctly save your data in a comma-separated file. 
 
 It's important to note that you have to reset the software after successfully inputting data if you want to replace it with a different set of data. Additionally, the input data must meet specific requirements:
 
-+ **source&target** (<a href="https://github.com/lcpmgh/SCUS/blob/main/casedata/casedata_source&target.csv" target="_blank">raw data</a>):
++ **<font size="5">1. source&target data</font>** (<a href="https://github.com/lcpmgh/SCUS/blob/main/casedata/casedata_source&target.csv" target="_blank">case data</a>):
 
 <img src="/srv/shiny-server/scus/help/pic_p1_1source&target.png" width = 100% alt="source&target" align=center />
 
-+ **source** (<a href="https://github.com/lcpmgh/SCUS/blob/main/casedata/casedata_source.csv" target="_blank">raw data</a>):
++ **<font size=5>2. source data</font>** (<a href="https://github.com/lcpmgh/SCUS/blob/main/casedata/casedata_source.csv" target="_blank">case data</a>):
 
 <img src="/srv/shiny-server/scus/help/pic_p1_2source.png" width = 100% alt="source" align=center />
 
-+ **target** (<a href="https://github.com/lcpmgh/SCUS/blob/main/casedata/casedata_target.csv" target="_blank">raw data</a>):
++ **<font size="5">3. target data</font>** (<a href="https://github.com/lcpmgh/SCUS/blob/main/casedata/casedata_target.csv" target="_blank">case data</a>):
 
 <img src="/srv/shiny-server/scus/help/pic_p1_3target.png" width = 100% alt="target" align=center />
 
