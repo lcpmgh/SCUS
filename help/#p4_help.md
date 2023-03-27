@@ -12,7 +12,7 @@ Some optional forms of $f(P_s)$:
 1. The sum of squared relative errors: $f(P_s)=\sum_{i=1}^{n}(\frac{C_i-\sum_{s=1}^{m}P_sS_{si}}{C_i})^2$ (Walling et al., 1999);
 2. The residual sum of squares (RSS): $f(P_s)=\sum_{i=1}^{n}\{C_i-\sum_{s=1}^{m}P_sS_{si}\}^2$ (Gruszowski et al., 2003);
 3. The absolute sum of the relative errors: $f(P_s)=\sum_{i=1}^{n}|\frac{C_i-\sum_{s=1}^{m}P_sS_{si}}{C_i}|$ (Walling et al., 1993);
-4. The root mean square error (RMSE): $f(P_s)=\sqrt{\frac{\sum_{i=1}^{n}\{C_i-\sum_{s=1}^{m}P_sS_{si}\}^2}{n}}$ (Motha et al., 2004);
+4. The root mean squared error (RMSE): $f(P_s)=\sqrt{\frac{\sum_{i=1}^{n}\{C_i-\sum_{s=1}^{m}P_sS_{si}\}^2}{n}}$ (Motha et al., 2004);
 5. The Landwehr model: $f(P_s)=\frac{1}{n}\sum_{i=1}^{n}\frac{|C_i-\sum_{s=1}^{m}P_sS_{si}|}{\sqrt{\sum_{s=1}^{m}P_s^2VAR_{si}}}$ (Devereux et al., 2010);
 6. The modified Landwehr model: $f(P_s)=\frac{1}{n}\sum_{i=1}^{n}\frac{|C_i-\sum_{s=1}^{m}P_sS_{si}|}{\sqrt{\sum_{s=1}^{m}P_s^2\frac{VAR_{si}}{N_s}}}$  (Gellis et al., 2009);
 7. The Collins model: $f(P_s)=\sum_{i=1}^{n}(\frac{C_i-\sum_{s=1}^{m}P_sS_{si}Z_sO_s}{C_i})^2W_i$ (Collins et al., 1997);
