@@ -3,12 +3,13 @@ The Sediment Contribution Unmixing Software (**SCUS**) is a supplementary tool t
 
 
 
-Software preview:
+SCUS preview:
 
-![preview_1.data](https://raw.githubusercontent.com/lcpmgh/scus/master/preview/preview_1.data.png)
+![preview_1.data](https://raw.githubusercontent.com/lcpmgh/scus/master/picture/preview_1.data.png)
 
-![preview_2.explore](https://raw.githubusercontent.com/lcpmgh/scus/master/preview/preview_2.explore.png)
+![preview_2.explore](https://raw.githubusercontent.com/lcpmgh/scus/master/picture/preview_2.explore.png)
 
-![preview_3.test](https://raw.githubusercontent.com/lcpmgh/scus/master/preview/preview_3.test.png)
+![preview_3.test](https://raw.githubusercontent.com/lcpmgh/scus/master/picture/preview_3.test.png)
 
-![preview_4.solve](https://raw.githubusercontent.com/lcpmgh/scus/master/preview/preview_4.solve.png)
+![preview_4.solve](https://raw.githubusercontent.com/lcpmgh/scus/master/picture/preview_4.solve.png)
+
